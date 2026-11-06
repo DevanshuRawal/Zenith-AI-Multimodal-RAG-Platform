@@ -1,0 +1,2 @@
+class AIProviderConfigurationError(RuntimeError):
+    pass
