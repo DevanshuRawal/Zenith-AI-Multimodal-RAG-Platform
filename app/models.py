@@ -78,6 +78,7 @@ class QueryResponse(BaseModel):
     sources: List[SourceDocument] = []
     session_id: Optional[str] = None
     interaction_id: Optional[str] = None
+    context: Optional[str] = None
 
 
 class FeedbackSubmission(BaseModel):
