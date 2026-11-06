@@ -135,18 +135,26 @@ and request ID without logging request bodies or exception messages.
    Public repositories need no GitHub token. Set `GITHUB_API_TOKEN` in `.env`
    for private repository access or higher GitHub API limits.
 
-## API endpoints
+## API Documentation & Swagger Reference
 
-- `GET /health`
-- `POST /api/upload`
-- `POST /api/query`
-- `POST /api/feedback`
-- `GET /api/feedback/report`
-- `POST /api/compliance-review`
-- `POST /api/index/github`
-- `GET /api/index/jobs/{job_id}`
-- `POST /api/clear-session`
-- `POST /api/clear`
+* **Full API Documentation:** [docs/API_DOCUMENTATION.md](docs/API_DOCUMENTATION.md)
+* **OpenAPI 3.1 Schema:** [openapi.json](openapi.json)
+* **Interactive Swagger UI:** [docs/index.html](docs/index.html) or `http://localhost:8000/docs` when running locally.
+
+### Key Endpoints
+
+- `GET /health` — Service health check
+- `POST /api/upload` — Multi-modal document & diagram upload
+- `POST /api/query` — Evidence-grounded architecture review
+- `GET /api/documents` — List indexed documents in knowledge base
+- `DELETE /api/documents/{document_name}` — Delete specific document
+- `POST /api/compliance-review` — Standard compliance audit
+- `POST /api/index/github` — Async GitHub repository indexing
+- `GET /api/index/jobs/{job_id}` — Check GitHub indexing progress
+- `POST /api/feedback` — Submit 1-5 star user feedback
+- `GET /api/feedback/report` — View aggregate QA metrics
+- `POST /api/clear` — Reset knowledge base
+- `POST /api/clear-session` — Clear conversational memory
 
 Example query payload:
 
